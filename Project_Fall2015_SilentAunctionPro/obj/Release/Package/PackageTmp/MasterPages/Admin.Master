@@ -1,0 +1,156 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Admin.Master.cs" Inherits="Project_Fall2015_SilentAunctionPro.MasterPages.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title></title>
+        <link href="../Content/bootstrap.css" rel="stylesheet" />
+        <script src="Scripts/jquery-2.1.4.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/bootstrap.css" rel="stylesheet" />
+        <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+        <link href="Content/navbar-fixed-top.css" rel="stylesheet" />
+    </asp:ContentPlaceHolder>
+<style>
+        .aa {
+            /*background-image: url("../UserWebForms/images.jpg");*/
+            background-color:#E8E8E8;
+             /*background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;*/
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="aa">
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-inverse navbar">
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-expanded="false" aria-controls="bs-navbar">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <nav id="bs-navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="../PagesAdmin/AdminHomePage.aspx"><span class="glyphicon glyphicon-home"></span>&nbsp; Admin Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-info-sign"></span>&nbsp; Items
+                          <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../PagesAdmin/ViewItems.aspx"><span class="glyphicon glyphicon-eye-open"></span>&nbsp; View Items</a>
+                                </li>
+                                <li>
+                                    <a href="../PagesAdmin/DonateItems.aspx"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Donate Items</a>
+                                </li>
+                                <li>
+                                    <a href="../PagesAdmin/SellItems.aspx"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Sell Items</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-print"></span>&nbsp;Print
+                          <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../PagesAdmin/PrintBidSheets.aspx"><span class="glyphicon glyphicon-print"></span>&nbsp;Print Bid Sheets</a>
+                                </li>
+                                <li>
+                                    <a href="../PagesAdmin/ViewInvoices.aspx"><span class="glyphicon glyphicon-print"></span>&nbsp;Print Invoices</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"></span>&nbsp;Actions
+                          <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../PagesAdmin/ImportToExcel.aspx"><span class="glyphicon glyphicon-import"></span>&nbsp; Import Data</a>
+                                </li>
+                                <li>
+                                    <a href="../PagesAdmin/ExportToExcel_New.aspx"><span class="glyphicon glyphicon-export"></span>&nbsp;Export To Excel</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../PagesAdmin/ViewReports.aspx"><span class="glyphicon glyphicon-wrench"></span>&nbsp;View Reports</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <asp:Label ID="Label2" runat="server"></asp:Label>
+                                <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../PagesAdmin/UpdateProfile.aspx"><span class="glyphicon glyphicon-wrench"></span>&nbsp;Update Profile</a>
+                                </li>
+                                <li>
+                                    <a href="../Default.aspx"><span class="glyphicon glyphicon-off"></span>&nbsp;Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <div class="container">
+            </div>
+        </asp:ContentPlaceHolder>
+
+
+
+        <%-- // Footer begins--%>
+        <div class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="container">
+                <p style="text-align: center; color: Highlight;">
+                    Copyright &copy; 2015 NASA CORP &trade;<br />
+                    <a href="../AboutUs.aspx">About Us</a>
+                </p>
+            </div>
+        </div>
+        <%-- Footer Ends --%>
+
+
+       
+
+        <%-- Code for Modal View --%>
+        <div class="modal fade" id="contact" role="dialog" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p>Contact Us</p>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <a class="btn btn-default" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%-- Code for Modal View Ends --%>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../Scripts/bootstrap.js"></script>
+        <script src="../Scripts/jquery-2.1.4.min.js"></script>
+        <link href="../Content/bootstrap.css" rel="stylesheet" />
+        <script src="../Scripts/jquery-2.1.4.js"></script>
+    </form>
+</body>
+</html>

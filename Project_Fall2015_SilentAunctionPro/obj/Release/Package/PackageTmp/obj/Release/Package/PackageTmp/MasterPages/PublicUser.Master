@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="PublicUser.Master.cs"
+    Inherits="Project_Fall2015_SilentAunctionPro.MasterPages.PublicUser" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title></title>
+        <link href="../Content/bootstrap.css" rel="stylesheet" />
+        <script src="Scripts/jquery-2.1.4.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/bootstrap.css" rel="stylesheet" />
+        <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+        <link href="Content/navbar-fixed-top.css" rel="stylesheet" />
+    </asp:ContentPlaceHolder>
+    <style>
+        .aa {
+            /*background-image: url("../UserWebForms/images.jpg");*/
+            background-color:#E8E8E8 ;
+            /*background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;*/
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="aa">
+    <form id="form1" runat="server">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-expanded="false" aria-controls="bs-navbar">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <nav id="bs-navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="../PagesPublic/PublicHomePage.aspx"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-wrench"></span>&nbsp;Items
+                          <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../PagesPublic/ViewDonatedItems.aspx"><span class="glyphicon glyphicon-eye-open"></span>&nbsp; View Donated Items</a>
+                                </li>
+                                <li>
+                                    <a href="../PagesPublic/DonateItems.aspx"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Donate Items</a>
+                                </li>
+                                <li>
+                                    <a href="../PagesPublic/CheckBidStatus.aspx"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Check Bid Status</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-print"></span>&nbsp;Print
+                          <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../PagesPublic/PrintBidNumber.aspx"><span class="glyphicon glyphicon-print"></span>&nbsp;Print Bidder Number</a>
+                                </li>
+                                <li>
+                                    <a href="../PagesPublic/ViewInvoices.aspx"><span class="glyphicon glyphicon-print"></span>&nbsp;Print Invoice</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                               <span class="glyphicon glyphicon-user"></span>&nbsp;<asp:Label ID="Label2" runat="server"></asp:Label>
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../PagesPublic/EditSubscriptions.aspx"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Mail Subscriptions</a>
+                                </li>
+                                <li>
+                                    <a href="../PagesPublic/UpdateProfile.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp;Update Profile</a>
+                                </li>
+                                <li>
+                                    <a href="../Default.aspx"><span class="glyphicon glyphicon-off"></span>&nbsp;Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </nav>
+
+        <div style="margin-left: 50px">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!--footer-->
+       <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <p style="text-align: center; color: Highlight;">
+                Copyright &copy; 2015 NASA CORP &trade;<br />
+                <a href="../AboutUs.aspx">About Us</a>
+            </p>
+        </div>
+    </div>
+
+        
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../Scripts/bootstrap.js"></script>
+        <script src="../Scripts/jquery-2.1.4.min.js"></script>
+        <link href="../Content/bootstrap.css" rel="stylesheet" />
+        <script src="../Scripts/jquery-2.1.4.js"></script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,217 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs"
+    Inherits="Project_Fall2015_SilentAunctionPro.MasterPages.Main" %>
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <script src="../Scripts/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+    <link href="../assets/css_master/form-elements.css" rel="stylesheet" />
+    <link href="../assets/css_master/style.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <title></title>
+
+    <style>
+        body {
+                        background-color:#E8E8E8;
+
+            /*background-image: url("../UserWebForms/mainbg.jpg");*/
+            /*background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;*/
+            z-index: -1;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title></title>
+        <link href="../Content/bootstrap.css" rel="stylesheet" />
+        <script src="../Scripts/jquery-2.1.4.min.js"></script>
+        <script src="../Scripts/bootstrap.min.js"></script>
+        <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="../Content/bootstrap.css" rel="stylesheet" />
+        <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+        <link href="../Content/navbar-fixed-top.css" rel="stylesheet" />
+
+    </asp:ContentPlaceHolder>
+
+
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <%--<div class="modal fade" id="contact2" role="dialog" tabindex="-1" aria-labelledby="modal-register-label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only"></span>
+                    </button>
+                    <h3 class="modal-title" id="modal-register-label2">Concerns, Comments..Please Write Us!!</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <asp:TextBox class="form-first-name form-control" placeholder="Name"
+                            aria-describedby="basic-addon1"
+                            runat="server" ID="nameModal"> 
+                        </asp:TextBox><br />
+                        <br />
+                        <asp:TextBox class="form-first-name form-control" placeholder="Email"
+                            aria-describedby="basic-addon1"
+                            runat="server" ID="emailModal"> 
+                        </asp:TextBox><br />
+                        <br />
+                        <asp:TextBox class="form-first-name form-control" placeholder="Enter your text here..."
+                            aria-describedby="basic-addon1"
+                            runat="server" TextMode="MultiLine" ID="TextModal"> 
+                        </asp:TextBox><br />
+                        <br />
+                        <asp:Button ID="button_Contact" runat="server" Text="Send" class="btn btn-lg btn-primary" /><br />
+                        <br />
+                        <asp:Label ID="Label2" ForeColor="Green" Text="" runat="server"> </asp:Label>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>--%>
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+
+                <nav id="bs-navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-center" style="margin-left: 180px;">
+
+                        <li><a href="http://www.thebabyfold.org/festivaloftrees/"><span class="glyphicon glyphicon-tree"></span>&nbsp; <b>Baby Fold-FOT</b></a>
+                        </li>
+
+                        <li><a href="Default.aspx"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a>
+                        </li>
+
+
+                        <li><a href="#contact2" data-toggle="modal"><span class="glyphicon glyphicon-hand-right"></span>&nbsp;Contact Us</a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="float: right;"><a href="#modal-register" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Log-in</a></li>
+                        <li style="float: right;"><a href="SignupTestAman.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;SignUp</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </nav>
+
+
+        <!-- MODAL -->
+        <div>
+            <div class="modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="modal-register-label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                            </button>
+                            <h3 class="modal-title" id="modal-register-label" style="font-size:large;">Sign in Now!</h3>
+                            <p style="font-size:large;">Sign-in to view/bid Auction Items</p>
+                        </div>
+                        <div class="modal-body">
+
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-first-name">Enter UserId</label>
+                                        <asp:TextBox class="form-first-name form-control" placeholder="User ID"
+                                            AutoPostBack="true" OnTextChanged="ajax_userid" aria-describedby="basic-addon1"
+                                            runat="server" ID="userid"> 
+                                        </asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                            ForeColor="Red" ControlToValidate="userid" ErrorMessage="UserId is Required"></asp:RequiredFieldValidator>
+
+                                        <asp:Label ID="Label1"  Text="" runat="server" Font-Size="Large"> </asp:Label>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            <%-- <input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">--%>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="form-last-name">Password</label>
+
+                            <div style="padding-bottom: 0.3em;">
+                                <asp:TextBox class="form-last-name form-control" TextMode="Password" placeholder="Password"
+                                    aria-describedby="basic-addon1" runat="server" ID="pass"></asp:TextBox>
+                            </div>
+                            <%--<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">--%>
+                        </div>
+
+                     <div style="padding-bottom: 0.3em;">
+                            <asp:Button ID="Button1" class="btn btn-lg btn-primary" runat="server"
+                                Text="Sign in" OnClick="Button1_Click" />
+
+                            <a href="./UserWebForms/forgot_pass.aspx" data-toggle="modal" style="font-size:large;"><span class="glyphicon glyphicon-user"></span>&nbsp;Forgot Password</a>
+
+
+                        </div>
+                        <asp:Label runat="server" ID="loginResult" Text=""></asp:Label>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+
+
+    <%-- // Footer begins--%>
+     <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <p style="text-align: center; color: Highlight;">
+                Copyright &copy; 2015 NASA CORP &trade;<br />
+                <a href="../AboutUs.aspx">About Us</a>
+            </p>
+        </div>
+    </div>
+    <%-- Footer Ends --%>
+
+
+
+
+    <%-- Code for Modal View --%>
+    <div class="modal fade" id="contact" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p>Contact Us</p>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%-- Code for Modal View Ends --%>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+
+
+</body>
+</html>
